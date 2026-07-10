@@ -1,30 +1,77 @@
-# incidentiq
+# IncidentIQ 🚨
 
-Welcome to your new [Mastra](https://mastra.ai/) project! We're excited to see what you'll build.
+AI-Powered Incident Response & Post-Mortem System built for HiDevs × Mastra Hackathon 2026.
 
-## Getting Started
+## What is IncidentIQ?
 
-Start the development server:
+IncidentIQ is a multi-agent AI system that automatically triages software incidents, generates remediation plans, and creates post-mortem reports in seconds.
 
-```shell
+## Tech Stack
+
+- **Mastra** - Agent orchestration & workflows
+- **Groq (LLaMA 3.3-70b)** - AI Language Model
+- **Qdrant Cloud** - Vector database for institutional memory
+- **Enkrypt AI** - Safety guardrails & hallucination detection
+- **Next.js** - Frontend dashboard
+- **TypeScript** - All code
+
+## Agents
+
+1. **Classifier Agent** - Classifies incident by category & severity
+2. **Retrieval Agent** - Searches similar past incidents in Qdrant
+3. **Security Specialist** - Analyzes security incidents
+4. **Performance Specialist** - Analyzes performance issues
+5. **UI/Infra Specialist** - Analyzes UI & infrastructure issues
+6. **Remediation Agent** - Creates comprehensive fix plan
+7. **Post-Mortem Agent** - Generates structured report
+
+## Setup
+
+Clone the repo:
+git clone https://github.com/sg4426847-star/incidentiq.git
+cd incidentiq
+
+Install dependencies:
+npm install
+
+Add environment variables in .env file:
+GROQ_API_KEY=your_key
+QDRANT_URL=your_url
+QDRANT_API_KEY=your_key
+ENKRYPT_API_KEY=your_key
+
+Start Mastra server:
 npm run dev
-```
 
-Open [http://localhost:4111](http://localhost:4111) in your browser to access [Mastra Studio](https://mastra.ai/docs/studio/overview). It provides an interactive UI for building and testing your agents, along with a REST API that exposes your Mastra application as a local service. This lets you start building without worrying about integration right away.
+In another terminal, start frontend:
+cd frontend
+npm run dev
 
-You can start editing files inside the `src/mastra` directory. The development server will automatically reload whenever you make changes.
+## Usage
 
-## Learn more
+1. Open http://localhost:3000
+2. Paste your incident report or logs
+3. Click "Analyze Incident"
+4. Get complete post-mortem report instantly!
 
-To learn more about Mastra, visit our [documentation](https://mastra.ai/docs/). Your bootstrapped project includes example code for [agents](https://mastra.ai/docs/agents/overview), [tools](https://mastra.ai/docs/agents/using-tools), [workflows](https://mastra.ai/docs/workflows/overview), [scorers](https://mastra.ai/docs/evals/overview), and [observability](https://mastra.ai/docs/observability/overview).
+## How It Works
 
-If you're new to AI agents, check out our [course](https://mastra.ai/learn) and [YouTube videos](https://youtube.com/@mastra-ai). You can also join our [Discord](https://discord.gg/BTYqqHKUrf) community to get help and share your projects.
+Bug Report Input
+      ↓
+Classifier Agent (category + severity)
+      ↓
+Retrieval Agent (search Qdrant for similar incidents)
+      ↓
+Specialist Agent (Security/Performance/UI)
+      ↓
+Remediation Agent (fix plan + confidence score)
+      ↓
+Enkrypt AI (safety validation)
+      ↓
+Post-Mortem Agent (final report)
+      ↓
+Display on Dashboard
 
-## Deploy to the Mastra platform
+## Problem Statement
 
-The [Mastra platform](https://projects.mastra.ai) provides two products for deploying and managing AI applications built with the Mastra framework:
-
-- **Studio**: A hosted visual environment for testing agents, running workflows, and inspecting traces
-- **Server**: A production deployment target that runs your Mastra application as an API server
-
-Learn more in the [Mastra platform documentation](https://mastra.ai/docs/mastra-platform/overview).
+Incident Response & Post-Mortem Agent - Track 5, HiDevs × Mastra Hackathon 2026
