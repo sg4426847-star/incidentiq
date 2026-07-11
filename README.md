@@ -75,3 +75,18 @@ Display on Dashboard
 ## Problem Statement
 
 Incident Response & Post-Mortem Agent - Track 5, HiDevs × Mastra Hackathon 2026
+## Challenges Faced
+
+- Coordinating multiple agents (classifier, retrieval, specialists, remediation) 
+  in a single typed workflow without breaking the chain
+- Ensuring Enkrypt AI validation catches hallucinated fixes before they reach the user
+- Handling branching logic cleanly across different incident categories
+- Managing latency across multiple sequential LLM calls while keeping response time low
+
+## Future Improvements
+
+- Add support for more incident categories (e.g. Data/ML pipeline failures)
+- Real-time Slack/Teams integration for instant incident alerts
+- Feedback loop so resolved incidents automatically improve future classifications
+- Multi-language support for bug reports
+- Analytics dashboard to track incident trends over time
