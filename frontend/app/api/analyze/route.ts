@@ -4,7 +4,7 @@ export async function POST(request: NextRequest) {
   try {
     const { incidentReport } = await request.json();
 
-    const response = await fetch(`${process.env.MASTRA_API_URL}/api/workflows/incidentWorkflow/start-async`, {
+    const response = await fetch("https://incidentiq-production-11b4.up.railway.app/api/workflows/incidentWorkflow/start-async", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 
